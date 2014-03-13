@@ -12,6 +12,7 @@
   "author": "Patrick Debois",
   "license": "MIT",
   "dependencies": {
-    "phantomjs": "^1.9.7-1"
+    "phantomjs": "^1.9.7-1",
+    "casperjs": "^1.1.0-beta3"
   }
 }
