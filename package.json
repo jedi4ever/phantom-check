@@ -1,0 +1,17 @@
+{
+  "name": "phantom-check",
+  "version": "0.0.1",
+  "description": "Use phantomjs to check your page for js errors, brokenlinks",
+  "bin": {
+    "phantom-check": "./bin/phantom-check"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Debois",
+  "license": "MIT",
+  "dependencies": {
+    "phantomjs": "^1.9.7-1"
+  }
+}
