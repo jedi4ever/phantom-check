@@ -1,6 +1,6 @@
 {
   "name": "phantom-check",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Use phantomjs to check your page for js errors, brokenlinks",
   "bin": {
     "phantom-check": "./bin/phantom-check"
