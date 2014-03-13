@@ -17,7 +17,7 @@ npm install -g phantom-check
 
 # Usage
 ```
-$ phantom-check http://google.be 
+$ phantom-check http://google.be  --ignore=http://somethirdparty.com
 ```
 
 # Sample output

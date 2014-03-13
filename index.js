@@ -3,12 +3,28 @@ var casper = require('casper').create({
   //logLevel: "debug"
 });
 
-
 var system = require('system');
-var url = system.args[system.args.length-1];
 
+// Get the URL
+var url = casper.cli.args[0]
+if (!url) {
+  console.error('Usage: \nphantom-check [--ignore=comma-separated-list-of-urls] <url>');
+  casper.exit(-1);
+}
+
+// Get the ignore options --ignore=
+var ignoreOption = casper.cli.options['ignore']
+
+var ignoreList = [];
+if (ignoreOption) {
+  ignoreList=ignoreOption.split(',')
+}
 
 console.log('Phantom is checking '+ url);
+
+if (ignoreOption) {
+  console.log('ignoring: '+ignoreOption);
+}
 console.log('');
 
 var errors = [];
@@ -36,8 +52,16 @@ casper.on('page.error', function(msg,trace) {
 }); 
 
 casper.on('resource.error', function(resourceError) {
-  var msg = resourceError.errorString + ' - ' + resourceError.url;
-  fail(msg);
+  var toIgnore=false;
+  ignoreList.forEach(function(ignore) {
+    if (resourceError.url.indexOf(ignore) == 0) {
+      toIgnore=true;
+    }
+  })
+  if (!toIgnore) {
+    var msg = resourceError.errorString + ' - ' + resourceError.url;
+    fail(msg);
+  }
 });
 
 // For example dns errors
