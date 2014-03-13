@@ -55,7 +55,9 @@ casper.on('resource.error', function(resourceError) {
   var toIgnore=false;
   ignoreList.forEach(function(ignore) {
     if (resourceError.url.indexOf(ignore) == 0) {
-      toIgnore=true;
+      if (toIgnore === false ) {
+        toIgnore=true;
+      }
     }
   })
   if (!toIgnore) {
