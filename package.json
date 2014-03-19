@@ -1,6 +1,9 @@
 {
   "name": "phantom-check",
-  "version": "0.0.11-rc3",
+  "version": "0.0.11-rc4",
+  "publishConfig": {
+    "tag": "rc"
+  },
   "description": "Use phantomjs to check your page for js errors, brokenlinks",
   "bin": {
     "phantom-check": "./bin/phantom-check"
