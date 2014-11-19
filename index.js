@@ -1,6 +1,6 @@
 var casper = require('casper').create({
-  //verbose: true,
-  //logLevel: "debug"
+  verbose: true,
+  logLevel: "debug"
 });
 
 var system = require('system');

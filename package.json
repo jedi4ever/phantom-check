@@ -1,10 +1,7 @@
 {
   "name": "phantom-check",
-  "version": "0.0.11-rc8",
+  "version": "0.0.15",
   "description": "Use phantomjs to check your page for js errors, brokenlinks",
-  "publishConfig": {
-    "tag": "rc"
-  },
   "bin": {
     "phantom-check": "./bin/phantom-check"
   },
@@ -15,7 +12,7 @@
   "author": "Patrick Debois",
   "license": "MIT",
   "dependencies": {
-    "phantomjs": "^1.9.7-1",
+    "phantomjs": "^1.9.8",
     "casperjs": "^1.1.0-beta3"
   }
 }
